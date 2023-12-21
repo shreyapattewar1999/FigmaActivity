@@ -129,21 +129,3 @@
   font-weight: bold;
   padding-top: 3px;
 }
-
-.uncompleteStatus {
-  color: #FF3D00;
-  background-color: #FF3D001A;
-  border-color: #FF3D00;
-}
-
-.lowRiskStatus {
-  color: #53D86A;
-  background-color: #D7E5DA;
-  border-color: #53D86A;
-}
-
-.needsReviewStatus {
-  color: #B8B9BC;
-  background-color: #ECECED;
-  border-color: #B8B9BC;
-}

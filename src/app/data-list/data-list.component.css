@@ -1,0 +1,54 @@
+.uncompleteStatus {
+  color: #FF3D00;
+  background-color: #FF3D001A;
+  border-color: #FF3D00;
+}
+
+.lowRiskStatus {
+  color: #53D86A;
+  background-color: #D7E5DA;
+  border-color: #53D86A;
+}
+
+.needsReviewStatus {
+  color: #B8B9BC;
+  background-color: #ECECED;
+  border-color: #B8B9BC;
+}
+
+.parent {
+  display: flex;
+  font-size: medium;
+}
+
+.fontBold {
+  font-weight: bold;
+}
+
+.box-card {
+  padding: 3%;
+  margin: 3%;
+  border: 1px solid #B8B9BC;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.text-gray {
+  color: #B8B9BC
+}
+
+.orangeFont {
+  color: #FF3D00;
+  font-weight: bold;
+}
+
+.badgeBox {
+  padding-left: 2%;
+  padding-right: 2%;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: small;
+  font-weight: bold;
+  padding-top: 3px;
+}

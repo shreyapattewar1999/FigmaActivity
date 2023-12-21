@@ -1,0 +1,28 @@
+<div class="box-card" *ngFor="let item of dataItems">
+  <div class="parent">
+    <h6 class="left fontBold">{{ item.name }}</h6>
+    <div
+      class="right badgeBox"
+      [ngClass]="{
+        uncompleteStatus: item.status == 'Uncomplete',
+        lowRiskStatus: item.status == 'Low Risk',
+        needsReviewStatus: item.status == 'Needs Review'
+      }"
+    >
+      <i class="bi bi-circle-fill pr-4"></i>{{ item.status }}
+    </div>
+  </div>
+
+  <div>
+    <span class="text-gray">From: </span>
+    <span>{{ item.from }}</span>
+  </div>
+  <div>
+    <span class="text-gray">To: </span>
+    <span>{{ item.to }}</span>
+  </div>
+  <div>
+    <span class="text-gray">Due Date: </span>
+    <span class="orangeFont">{{ item.dueDate }}</span>
+  </div>
+</div>
