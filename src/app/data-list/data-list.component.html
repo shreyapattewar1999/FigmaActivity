@@ -4,9 +4,9 @@
     <div
       class="right badgeBox"
       [ngClass]="{
-        uncompleteStatus: item.status == 'Uncomplete',
-        lowRiskStatus: item.status == 'Low Risk',
-        needsReviewStatus: item.status == 'Needs Review'
+        uncompleteStatus: item.status === 'Uncomplete',
+        lowRiskStatus: item.status === 'Low Risk',
+        needsReviewStatus: item.status === 'Needs Review'
       }"
     >
       <i class="bi bi-circle-fill pr-4"></i>{{ item.status }}

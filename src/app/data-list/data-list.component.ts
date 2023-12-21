@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { IDataItem } from '../../IDataItem';
 @Component({
   selector: 'app-data-list',
   standalone: true,
@@ -10,7 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrl: './data-list.component.css',
 })
 export class DataListComponent {
-  dataItems: any = [];
+  dataItems: IDataItem[] = [];
 
   constructor() {
     this.dataItems = [

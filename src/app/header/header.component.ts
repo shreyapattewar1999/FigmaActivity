@@ -11,7 +11,7 @@ import { DataListComponent } from '../data-list/data-list.component';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  isMapClicked: Boolean = true;
+  isMapClicked: boolean = true;
 
   constructor() {}
 

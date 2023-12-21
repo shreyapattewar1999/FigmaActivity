@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import * as L from 'leaflet';
 import { MarkerService } from '../marker.service';
@@ -25,8 +25,8 @@ L.Marker.prototype.options.icon = iconDefault;
   templateUrl: './map-container.component.html',
   styleUrl: './map-container.component.css',
 })
-export class MapContainerComponent implements OnInit, AfterViewInit {
-  map: any;
+export class MapContainerComponent implements AfterViewInit {
+  map!: L.Map;
 
   private initMap(): void {
     this.map = L.map('map', {
@@ -48,7 +48,6 @@ export class MapContainerComponent implements OnInit, AfterViewInit {
   }
 
   constructor(private markerService: MarkerService) {}
-  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     this.initMap();
