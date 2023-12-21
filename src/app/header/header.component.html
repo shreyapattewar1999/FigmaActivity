@@ -1,0 +1,187 @@
+<div class="header text-white">
+  <div class="row">
+    <div class="col-md-3 zenduText">ZenduForms</div>
+    <div class="col-md pt-half"><i class="bi bi-list-ul"></i> Forms</div>
+    <div class="col-md pt-half">
+      <i class="bi bi-people-fill pr-6"></i>Customers
+    </div>
+    <div class="col-md pt-half bg-blueshadow">
+      <i class="bi bi-soundwave"></i> Submissions
+    </div>
+    <div class="col-md pt-half">
+      <i class="bi bi-arrow-counterclockwise pr-2"></i> History
+    </div>
+    <div class="col-md pt-half">
+      <i class="bi bi-bar-chart-fill"></i>
+      Reports
+    </div>
+    <div class="col-md pt-half">
+      <i class="bi bi-file-bar-graph"></i> Workflow
+    </div>
+    <div class="col-md pt-half">
+      <i class="bi bi-bell-fill pr-10"></i
+      ><i class="bi bi-box-arrow-in-right"></i>
+    </div>
+  </div>
+</div>
+<div
+  [ngStyle]="{
+    paddingLeft: '30px',
+    fontWeight: 700,
+    fontSize: '24px',
+    paddingTop: '2%'
+  }"
+>
+  Submissions
+</div>
+<div
+  [ngStyle]="{
+    paddingLeft: '22px',
+    paddingTop: '1%'
+  }"
+>
+  <div class="row">
+    <div class="col-md-3" [ngStyle]="{ marginLeft: '10px', }">
+      <input
+        class="fontAwesome"
+        placeholder="&#xF002; Search.."
+        [ngStyle]="{
+          paddingLeft: '8px',
+          fontSize: '14px',
+          height: '40px',
+          border: '1px #a4a5a5c7 solid',
+          borderRadius: '4px',
+          width: '90%'
+        }"
+      />
+    </div>
+    <div class="col-md">
+      <select
+        [ngStyle]="{
+          paddingLeft: '8px',
+          fontSize: '14px',
+          height: '40px',
+          border: '1px #a4a5a5c7 solid',
+          borderRadius: '4px',
+          width: '90%'
+        }"
+      >
+        <option>Select Form</option>
+      </select>
+    </div>
+    <div class="col-md">
+      <select
+        [ngStyle]="{
+          paddingLeft: '8px',
+          fontSize: '14px',
+          height: '40px',
+          border: '1px #a4a5a5c7 solid',
+          borderRadius: '4px',
+          width: '90%'
+        }"
+      >
+        <option>Select Status</option>
+      </select>
+    </div>
+    <div class="col-md">
+      <input
+        type="date"
+        [value]="'2020-12-24'"
+        [ngStyle]="{
+          paddingLeft: '8px',
+          fontSize: '14px',
+          height: '40px',
+          border: '1px #a4a5a5c7 solid',
+          borderRadius: '4px'
+        }"
+      />
+    </div>
+    <div class="col-md-2 align-rightend">
+      <button
+        [ngStyle]="{
+          fontSize: '14px',
+          height: '40px',
+          borderRadius: '4px',
+          width: '60px',
+          border: '1px #a4a5a5c7 solid',
+          background: isMapClicked ? '#2188D9' : 'white',
+          color: isMapClicked ? 'white' : 'black'
+        }"
+        (click)="toggleBtn()"
+      >
+        Map
+      </button>
+      <button
+        [ngStyle]="{
+          fontSize: '14px',
+          height: '40px',
+          borderRadius: '4px',
+          width: '60px',
+          border: '1px #a4a5a5c7 solid',
+          background: !isMapClicked ? '#2188D9' : 'white',
+          color: !isMapClicked ? 'white' : 'black'
+        }"
+        (click)="toggleBtn()"
+      >
+        List
+      </button>
+    </div>
+    <div class="col-md">
+      <button
+        [ngStyle]="{
+          paddingLeft: '8px',
+          fontSize: '14px',
+          color: '#2188D9',
+          border: '0px',
+          height: '40px',
+          background: 'white',
+          fontWeight: 'bold'
+        }"
+      >
+        <i class="bi bi-file-earmark-arrow-down-fill"></i>
+
+        Export
+      </button>
+    </div>
+  </div>
+</div>
+<div [ngStyle]="{ paddingLeft: '19px',}">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="box-card" *ngFor="let item of dataItems">
+        <div class="parent">
+          <h6 class="left fontBold">{{ item.name }}</h6>
+          <div
+            class="right badgeBox"
+            [ngClass]="{
+              uncompleteStatus: item.status == 'Uncomplete',
+              lowRiskStatus: item.status == 'Low Risk',
+              needsReviewStatus: item.status == 'Needs Review'
+            }"
+          >
+            <i class="bi bi-circle-fill pr-4"></i>{{ item.status }}
+          </div>
+        </div>
+        <!-- <span>
+          {{ item.name }}
+          <span class="align-rightend">{{ item.status }}</span>
+        </span> -->
+        <div>
+          <span class="text-gray">From: </span>
+          <span>{{ item.from }}</span>
+        </div>
+        <div>
+          <span class="text-gray">To: </span>
+          <span>{{ item.to }}</span>
+        </div>
+        <div>
+          <span class="text-gray">Due Date: </span>
+          <span class="orangeFont">{{ item.dueDate }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <app-map-container></app-map-container>
+    </div>
+  </div>
+</div>
