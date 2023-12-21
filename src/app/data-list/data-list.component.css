@@ -46,9 +46,14 @@
 .badgeBox {
   padding-left: 2%;
   padding-right: 2%;
-  border: 1px solid black;
+  border: 1px solid #B8B9BC;
   border-radius: 4px;
   font-size: small;
   font-weight: bold;
   padding-top: 3px;
+}
+
+.left {
+  margin-right: auto;
+
 }
